@@ -12,6 +12,7 @@ public class MazeConstructor : MonoBehaviour
     [SerializeField] private Material treasureMat;
 
     private MazeDataGenerator dataGenerator;
+    private MazeMeshGenerator meshGenerator;
     public int[,] data
     {
         get; private set;
@@ -21,6 +22,7 @@ public class MazeConstructor : MonoBehaviour
     void Awake()
     {
         dataGenerator = new MazeDataGenerator();
+        meshGenerator = new MazeMeshGenerator();
         //Default to walls surrounding a single empty cell
         data = new int[,]
         {
@@ -68,5 +70,21 @@ public class MazeConstructor : MonoBehaviour
             msg += "\n";
         }
         GUI.Label(new Rect(20, 20, 500, 500), msg);
+    }
+    private void DisplayMaze()
+    {
+        GameObject go = new GameObject();
+        go.transform.position = Vector3.zero;
+        go.name = "Procedural Maze";
+        go.tag = "Generated";
+
+        MeshFilter mf = go.AddComponent<MeshFilter>();
+        mf.mesh = meshGenerator.FromData(data);
+
+        MeshCollider mc = go.AddComponent<MeshCollider>();
+        mc.sharedMesh = mf.mesh;
+
+        MeshRenderer mr = go.AddComponent<MeshRenderer>();
+        mr.materials = new Material[2] { mazeMat1,mazeMat2 };
     }
 }
