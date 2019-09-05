@@ -130,7 +130,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &82114618
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -200,7 +200,7 @@ RectTransform:
   m_GameObject: {fileID: 82114617}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1966176013}
   - {fileID: 1280697453}
@@ -706,6 +706,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5801ad959381b248b68ce7ffc4d1f06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 1773131083}
+  timeLabel: {fileID: 1966176014}
+  scoreLabel: {fileID: 1280697454}
 --- !u!114 &2130847465
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -718,7 +721,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02f2a886b38750842bcf68567f50e3c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  showDebug: 1
+  showDebug: 0
   mazeMat1: {fileID: 2100000, guid: 2019d743bc0984ba1b81150901d44455, type: 2}
   mazeMat2: {fileID: 2100000, guid: a36a45d20a42a4a0695e782d8b69409e, type: 2}
   startMat: {fileID: 2100000, guid: c8296ee06001c4d39b0f615626264b85, type: 2}
